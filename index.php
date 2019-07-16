@@ -1,5 +1,12 @@
 <?php
+include 'app/config.php';
 
-$request = $_SERVER['REQUEST_URI'];
-
-echo $request;
+Route::set('index', function () {
+    Index::createView();
+});
+Route::set('about-us', function () {
+    AboutUs::createView();
+});
+Route::set('contact-us', function () {
+    ContactUs::createView();
+});
