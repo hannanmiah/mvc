@@ -1,7 +1,7 @@
 <?php
 class Bootstrap
 {
-    public $routes = array();
+    public $route = array();
     public function __construct()
     {
         $request = trim($_SERVER['REQUEST_URI'], '/');
@@ -11,6 +11,6 @@ class Bootstrap
         } elseif ($url[1] == 'index.php') {
             $url[1] = 'index';
         }
-        $this->routes = $url;
+        $this->route = $url;
     }
 }

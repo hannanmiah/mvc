@@ -6,4 +6,9 @@ class Index extends Controller
     {
         echo "This is index page!<br>";
     }
+
+    public static function index()
+    {
+        include 'Views/index.php';
+    }
 }
