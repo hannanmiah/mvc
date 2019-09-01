@@ -2,9 +2,7 @@
 include 'app/config.php';
 
 Route::get('index', 'Index@index');
-Route::get('about-us', function () {
-    AboutUs::createView();
-});
+Route::get('about-us', 'AboutUs@view');
 Route::get('contact-us', function () {
-    ContactUs::createView();
+    echo "<h2>This is contact us page!</h2>";
 });

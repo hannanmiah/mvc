@@ -17,7 +17,13 @@ class Route
                 $method();
             } elseif (is_string($method)) {
                 $arg = explode('@', $method);
-                $arg[0]::{$arg[1]}();
+                if (!class_exists($arg[0])) {
+                    echo "Class {$arg[0]} not found!";
+                } elseif (!method_exists($arg[0], $arg[1])) {
+                    echo "Function {$arg[1]} doesn't exist!";
+                } else {
+                    $arg[0]::{$arg[1]}();
+                }
             }
         }
     }
